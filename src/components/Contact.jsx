@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
@@ -27,22 +27,26 @@ const Contact = () => {
     });
   };
 
+  useEffect(() => {
+  })
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        // import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        // import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        'service_qo4fye8',
+        'template_d2ola7d',
         {
           from_name: form.name,
-          to_name: "Keygen Extermination",
+          to_name: "Jonathan",
           from_email: form.email,
           to_email: "jonathantheresanto123@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        // import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        'fUP4MWf0fMWY7mdvH'
       )
       .then(
         () => {
